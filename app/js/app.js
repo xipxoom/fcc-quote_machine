@@ -20,6 +20,7 @@
     $('#newQuote').on('click', function(e) {
       e.preventDefault();
       $('#goatAuthor').text(goat.getRandomName());
+      $('#goatPic').attr('src', goat.getRandomImg());
     }); // newQuote
 
     // Get our first quote
@@ -31,6 +32,8 @@
   // capra, ram, aries, wool, fleece, bleat, baaa, dolly, blacksheep,
   // horny/horn
   var goat = {
+    goatImgNum: 19,
+    goatImgPrefix: "./img/goat_",
     names: [
       "Goaty McGoatface",     "Little Bo Peep's Lost Sheep", "Mary's Lamb",
       "Goat John Paul II",    "Lao Ewe",                     "Billy The Kid",
@@ -49,6 +52,9 @@
     ],
     getRandomName: function() {
       return this.names[Math.floor(Math.random() * this.names.length)];
+    },
+    getRandomImg: function() {
+      return this.goatImgPrefix + (Math.floor(Math.random() * this.goatImgNum + 1)) + ".jpg";
     }
   };
 
