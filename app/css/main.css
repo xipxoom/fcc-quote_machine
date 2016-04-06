@@ -1,9 +1,134 @@
 body {
-  max-width: 960px;
-  margin: 0 auto;
+  max-width: 480px;
+  margin: 5% auto;
+  padding: 5%;
+  height: 100%;
+  background: #d2d2d2;
+  border: 1px solid;
+  border-radius: 80px;
+  font-family: 'Lato', sans-serif;
+  font-size: 18px;
+}
+a, a:visited {
+  text-decoration: none;
+  color: #000;
+}
+a {
+  padding: 20px;
+  border: 2px solid #297bdb;
+  border-radius: 40px;
+  display: block;
+  width: 160px;
+  text-align: center;
+  transition: all 0.2s ease-in-out;
+  margin: 20px;
+  margin-top: 30px;
+}
+a:hover {
+  background-color: #297bdb;
+  color: #fff;
 }
 img {
   border-radius: 50%;
-  width: 200px;
-  height: 200px;
+  width: 220px;
+  height: 220px;
+  float: left;
+}
+@media (max-width: 500px) {
+  img {
+    width: 130px;
+    height: 130px;
+  }
+}
+cite {
+  font-style:normal;
+  font-family: 'Lato', sans-serif;
+}
+/* Adapted from Nicolas Gallagher's awesome css speech bubble page */
+/* http://nicolasgallagher.com/pure-css-speech-bubbles/demo/ */
+blockquote {
+  font-family: 'Playfair Display', serif;
+  font-style: italic;
+  position:relative;
+  width:320px;
+  min-height: 100px;
+  padding:50px 40px;
+  margin: auto auto 10px;
+  text-align:center;
+  color:#fff;
+  background:#5a8f00;
+  /* css3 */
+  background:-webkit-gradient(linear, 0 0, 0 100%, from(#297bdb), to(#103cbe));
+  background:-moz-linear-gradient(#297bdb, #103cbe);
+  background:-o-linear-gradient(#297bdb, #103cbe);
+  background:linear-gradient(#297bdb, #103cbe);
+  /*
+  NOTES:
+  -webkit-border-radius:220px 120px; // produces oval in safari 4 and chrome 4
+  -webkit-border-radius:220px / 120px; // produces oval in chrome 4 (again!) but not supported in safari 4
+  Not correct application of the current spec, therefore, using longhand to avoid future problems with webkit corrects this
+  */
+  -webkit-border-top-left-radius:220px 120px;
+  -webkit-border-top-right-radius:220px 120px;
+  -webkit-border-bottom-right-radius:220px 120px;
+  -webkit-border-bottom-left-radius:220px 120px;
+  -moz-border-radius:220px / 120px;
+  border-radius:220px / 120px;
+}
+@media (max-width: 440px) {
+  blockquote {
+    width: 220px;
+  }
+}
+blockquote:before {
+  content:"";
+  position:absolute;
+  z-index:-1;
+  bottom:-30px;
+  right:50%;
+  height:30px;
+  border-right:60px solid #103cbe;
+  background:#103cbe; /* need this for webkit - bug in handling of border-radius */
+  /* css3 */
+  -webkit-border-bottom-right-radius:80px 50px;
+  -moz-border-radius-bottomright:80px 50px;
+  border-bottom-right-radius:80px 50px;
+  /* using translate to avoid undesired appearance in CSS2.1-capabable but CSS3-incapable browsers */
+  -webkit-transform:translate(0, -2px);
+  -moz-transform:translate(0, -2px);
+  -ms-transform:translate(0, -2px);
+  -o-transform:translate(0, -2px);
+  transform:translate(0, -2px);
+}
+blockquote:after {
+  content:"";
+  position:absolute;
+  z-index:-1;
+  bottom:-30px;
+  right:50%;
+  width:60px;
+  height:30px;
+  background:#d2d2d2;
+  /* css3 */
+  -webkit-border-bottom-right-radius:40px 50px;
+  -moz-border-radius-bottomright:40px 50px;
+  border-bottom-right-radius:40px 50px;
+  /* using translate to avoid undesired appearance in CSS2.1-capabable but CSS3-incapable browsers */
+  -webkit-transform:translate(-30px, -2px);
+  -moz-transform:translate(-30px, -2px);
+  -ms-transform:translate(-30px, -2px);
+  -o-transform:translate(-30px, -2px);
+  transform:translate(-30px, -2px);
+}
+
+
+.goatRow {
+  width: 100%;
+  text-align: center;
+  display: inline-block;
+  position: relative;
+}
+.buttons {
+  display: inline-block;
+  margin-bottom: 30px;
 }
