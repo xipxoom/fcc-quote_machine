@@ -38,6 +38,27 @@
 
   var goat = {
     goatImgNum: 19,
+    goatImgRemote: [  // codepen.io needs remote links
+      "https://i.imgsafe.org/06598ba.jpg",
+      "https://i.imgsafe.org/0b1b2a8.jpg",
+      "https://i.imgsafe.org/0c1e3db.jpg",
+      "https://i.imgsafe.org/0d0f841.jpg",
+      "https://i.imgsafe.org/0dc779a.jpg",
+      "https://i.imgsafe.org/0ea9359.jpg",
+      "https://i.imgsafe.org/0f8eaa3.jpg",
+      "https://i.imgsafe.org/1072c94.jpg",
+      "https://i.imgsafe.org/1138427.jpg",
+      "https://i.imgsafe.org/11e3f24.jpg",
+      "https://i.imgsafe.org/129ec39.jpg",
+      "https://i.imgsafe.org/1397c68.jpg",
+      "https://i.imgsafe.org/15a6c66.jpg",
+      "https://i.imgsafe.org/1667fcd.jpg",
+      "https://i.imgsafe.org/1712303.jpg",
+      "https://i.imgsafe.org/1809307.jpg",
+      "https://i.imgsafe.org/1894ba8.jpg",
+      "https://i.imgsafe.org/194930f.jpg",
+      "https://i.imgsafe.org/1a99737.jpg"
+    ],
     goatImgPrefix: "./img/goat_",
     names: [
       "Goaty McGoatface",     "Little Bo Peep's Lost Sheep", "Mary's Lamb",
@@ -60,6 +81,7 @@
     },
     getRandomImg: function() {
       return this.goatImgPrefix + (Math.floor(Math.random() * this.goatImgNum + 1)) + ".jpg";
+      //return this.goatImgRemote[Math.floor(Math.random() * this.goatImgRemote.length)];
     }
   };
 
