@@ -22,3 +22,8 @@ Build a [CodePen.io](https://codepen.io) app that is functional similar to [the 
 
 ### Notes:
 Wikiquotes isn't the best place to pull quotes from as you have to access it through the mediawiki api and the quote page layout doesn't always match one another.  This means that occasionally blank quotes and other various errors slip through.
+Hosted at: http://codepen.io/xipxoom/pen/dMJGyR
+
+### Todo:
+* This app is quirky enough that animations might be fun.
+* Do some sanity checks on the quotes we receive.
