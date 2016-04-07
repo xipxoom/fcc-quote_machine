@@ -2,6 +2,19 @@
   // onReady
   $(function() {
 
+    function quoteDisplay(quoteObj) {
+      if (quoteObj && !quoteObj.quote) {
+        // Sometimes we don't actually get a quote - try again.
+        WikiquoteApi.getCompletelyRandomQuote(quoteDisplay, quoteError);
+      } else {
+        $('#quoteText').text(quoteObj.quote);
+        $('#realAuthor').text(quoteObj.titles);
+      }
+    }
+    function quoteError(errorObj) {
+      console.log(errorObj);
+    } //END quoteDisplay
+
     $('#tweetQuote').on('click', function(e){
       e.preventDefault();
       // Full attribution - Little long for twitter
@@ -15,17 +28,19 @@
       window.open('https://twitter.com/intent/tweet?hashtags=QuotesMcGoats' +
                   '&text=' + encodeURIComponent($('#quoteText').text()) +
                   ' -' + encodeURIComponent($('#goatAuthor').text()), '_blank');
-    });  // tweetQuote
+    });  // END tweetQuote
 
     $('#newQuote').on('click', function(e) {
       e.preventDefault();
       $('#goatAuthor').text(goat.getRandomName());
       $('#goatPic').attr('src', goat.getRandomImg());
-    }); // newQuote
+
+      WikiquoteApi.getCompletelyRandomQuote(quoteDisplay, quoteError);
+    }); // END newQuote
 
     // Get our first quote
     $('#newQuote').click();
-  });  // onReady
+  });  // END onReady
 
   // Name ideas:
   // Goat, sheep, kid, billy, ewe, lamb, chop, ibex, markhor,

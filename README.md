@@ -15,3 +15,7 @@ Build a [CodePen.io](https://codepen.io) app that is functional similar to [the 
 ### User Stories:
 * I can click a button to show me a new random quote.
 * I can press a button to tweet out a quote.
+
+### Technology and Libraries:
+* jQuery for ajax and DOM manipulation.
+* [David Lane's fork](https://github.com/davelane/wikiquotes-api) of [Nate Tyler's wikiquotes-api](https://github.com/natetyler/wikiquotes-api).  I use David's fork for the added ability to pull quotes from a random page.
