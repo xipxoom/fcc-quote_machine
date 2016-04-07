@@ -139,7 +139,8 @@ var WikiquoteApi = (function() {
       data: {
         format: "json",
         action: "parse",
-        noimages: "",
+        noimages: true,
+        mobileformat: true,
         pageid: pageId,
         section: sectionIndex
       },
