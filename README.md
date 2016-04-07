@@ -19,3 +19,6 @@ Build a [CodePen.io](https://codepen.io) app that is functional similar to [the 
 ### Technology and Libraries:
 * jQuery for ajax and DOM manipulation.
 * [David Lane's fork](https://github.com/davelane/wikiquotes-api) of [Nate Tyler's wikiquotes-api](https://github.com/natetyler/wikiquotes-api).  I use David's fork for the added ability to pull quotes from a random page.
+
+### Notes:
+Wikiquotes isn't the best place to pull quotes from as you have to access it through the mediawiki api and the quote page layout doesn't always match one another.  This means that occasionally blank quotes and other various errors slip through.
