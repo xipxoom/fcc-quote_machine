@@ -9,47 +9,33 @@
       } else {
         $('#quoteText').text(quoteObj.quote);
         $('#realAuthor').text(quoteObj.titles);
-        //console.log(quoteObj);
-        //console.log(quoteObj.quote);
         $('#goatAuthor').text(goat.getRandomName());
         $('#goatPic').attr('src', goat.getRandomImg());
       }
     }
+
     function quoteError(errorObj) {
       console.log(errorObj);
-    } //END quoteDisplay
+      $('#quoteText').text('Baaaa!  I mean, Error!  Try again!');
+
+    }
 
     $('#tweetQuote').on('click', function(e){
       e.preventDefault();
-      // Full attribution - Little long for twitter
-      // window.open('https://twitter.com/intent/tweet?hashtags=QuotesMcGoats' +
-      //             '&text=' + encodeURIComponent($('#quoteText').text()) +
-      //             ' -' + encodeURIComponent($('#goatAuthor').text()) +
-      //             ' (commonly misattributed to ' +
-      //             encodeURIComponent($('#realAuthor').text()) + ')', '_blank');
-
-      // Just fake author
       window.open('https://twitter.com/intent/tweet?hashtags=QuotesMcGoats' +
                   '&text=' + encodeURIComponent($('#quoteText').text()) +
                   ' -' + encodeURIComponent($('#goatAuthor').text()), '_blank');
-    });  // END tweetQuote
+    });
 
     $('#newQuote').on('click', function(e) {
       e.preventDefault();
-    //  $('#goatAuthor').text(goat.getRandomName());
-      //$('#goatPic').attr('src', goat.getRandomImg());
-
       WikiquoteApi.getCompletelyRandomQuote(quoteDisplay, quoteError);
-    }); // END newQuote
+    });
 
-    // Get our first quote
+    // Get our first quote on page load.
     $('#newQuote').click();
-  });  // END onReady
+  });
 
-  // Name ideas:
-  // Goat, sheep, kid, billy, ewe, lamb, chop, ibex, markhor,
-  // capra, ram, aries, wool, fleece, bleat, baaa, dolly, blacksheep,
-  // horny/horn
   var goat = {
     goatImgNum: 19,
     goatImgPrefix: "./img/goat_",
