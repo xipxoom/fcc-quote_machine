@@ -9,6 +9,10 @@
       } else {
         $('#quoteText').text(quoteObj.quote);
         $('#realAuthor').text(quoteObj.titles);
+        //console.log(quoteObj);
+        //console.log(quoteObj.quote);
+        $('#goatAuthor').text(goat.getRandomName());
+        $('#goatPic').attr('src', goat.getRandomImg());
       }
     }
     function quoteError(errorObj) {
@@ -32,8 +36,8 @@
 
     $('#newQuote').on('click', function(e) {
       e.preventDefault();
-      $('#goatAuthor').text(goat.getRandomName());
-      $('#goatPic').attr('src', goat.getRandomImg());
+    //  $('#goatAuthor').text(goat.getRandomName());
+      //$('#goatPic').attr('src', goat.getRandomImg());
 
       WikiquoteApi.getCompletelyRandomQuote(quoteDisplay, quoteError);
     }); // END newQuote
