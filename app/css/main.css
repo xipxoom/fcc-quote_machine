@@ -31,7 +31,7 @@ a:hover {
   color: #fff;
 }
 img {
-  border: 6px solid white;
+  border: 6px solid #fff;
   border-radius: 50%;
   width: 220px;
   height: 220px;
@@ -60,7 +60,7 @@ blockquote {
   margin: auto auto 10px;
   text-align:center;
   color:#fff;
-  background:#5a8f00;
+  background:#103cbe;
   /* css3 */
   background:-webkit-gradient(linear, 0 0, 0 100%, from(#297bdb), to(#103cbe));
   background:-moz-linear-gradient(#297bdb, #103cbe);
@@ -136,4 +136,7 @@ blockquote:after {
 .buttons {
   display: inline-block;
   margin-bottom: 30px;
+}
+.quoteError {
+  border: 6px solid red;
 }

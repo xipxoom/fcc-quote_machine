@@ -10,14 +10,14 @@
         $('#quoteText').text(quoteObj.quote);
         $('#realAuthor').text(quoteObj.titles);
         $('#goatAuthor').text(goat.getRandomName());
-        $('#goatPic').attr('src', goat.getRandomImg());
+        $('#goatPic').attr('src', goat.getRandomImg()).removeClass("quoteError");
       }
     }
 
     function quoteError(errorObj) {
       console.log(errorObj);
       $('#quoteText').text('Baaaa!  I mean, Error!  Try again!');
-
+      $('#goatPic').addClass("quoteError");
     }
 
     $('#tweetQuote').on('click', function(e){
